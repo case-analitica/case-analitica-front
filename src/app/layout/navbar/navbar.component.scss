@@ -1,0 +1,23 @@
+#toolbarMenu {
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+#mainToolbar {
+  background-color: #0175fa;
+  position: fixed;
+  height: 4rem;
+}
+
+#mainToolbar .toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+#mainToolbar .toolbar-icon {
+  cursor: pointer;
+  margin: 0 8px;
+}
+
+.img-logo {
+  width: 10rem;
+}

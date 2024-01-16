@@ -1,0 +1,33 @@
+[
+  {
+    "id": "8",
+    "customerType": "PF",
+    "name": "Juao Carlos",
+    "corporateName": null,
+    "cnpj": null,
+    "stateRegistration": null,
+    "cityRegistration": null,
+    "cpf": "792.727.480-54",
+    "rg": null,
+    "birth": "1988-03-30",
+    "phone": "(11) 3522-8899",
+    "mobile": "(96) 9 9194-9455",
+    "fax": null,
+    "email": "donis@itfast.net",
+    "active": "1",
+    "contacts": [],
+    "addresses": [{
+        "address": {
+          "cep": "31260-210",
+          "street": "Rua Cassiano Campolina",
+          "number": "10",
+          "complement": null,
+          "neighborhood": "Dona Clara",
+          "cityId": "1411",
+          "city": "Belo Horizonte",
+          "state": "MG"
+        }
+      }
+    ]
+  }
+]

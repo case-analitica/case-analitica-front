@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "description": "Fluximetro Digital",
+    "localization": "Mala 1",
+    "deviceGroup": "CG",
+    "manufacturer": "Agilent",
+    "model": "G6691A",
+    "serialNumber": "MY18481807",
+    "tag": "FLUX-003",
+    "calibStatus": "Realizado"
+  }
+
+]

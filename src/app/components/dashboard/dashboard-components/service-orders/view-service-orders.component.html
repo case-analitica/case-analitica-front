@@ -1,0 +1,40 @@
+<mat-card class="card">
+  <mat-card-content>
+    <div>
+      <div>
+        <mat-card-title style="text-align: center;">Ordens de Serviço Abertas</mat-card-title>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <h6>
+              <i></i>Externas
+            </h6>
+          </li>
+          <li>
+            <h6>
+              <i></i>Internas
+            </h6>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [dataLabels]="chartOptions.dataLabels"
+        [plotOptions]="chartOptions.plotOptions"
+        [yaxis]="chartOptions.yaxis"
+        [legend]="chartOptions.legend"
+        [fill]="chartOptions.fill"
+        [stroke]="chartOptions.stroke"
+        [tooltip]="chartOptions.tooltip"
+        [xaxis]="chartOptions.xaxis"
+        [grid]="chartOptions.grid">
+      </apx-chart>
+    </div>
+  </mat-card-content>
+</mat-card>
+
