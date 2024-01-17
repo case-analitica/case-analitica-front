@@ -41,12 +41,12 @@ export class ViewServiceOrdersComponent {
     this.chartOptions = {
       series: [
         {
-          name: "Pixel",
-          data: [44, 55, 57, 56, 61, 58],
+          name: "Internas",
+          data: [44, 55, 57, 56, 61, 58, 70, 55, 57, 56, 61, 10],
         },
         {
-          name: "Ample",
-          data: [76, 85, 101, 98, 87, 105],
+          name: "Externas",
+          data: [76, 85, 101, 98, 87, 105, 76, 85, 101, 98, 8, 59],
         },
       ],
       chart: {
@@ -73,7 +73,7 @@ export class ViewServiceOrdersComponent {
         colors: ["transparent"],
       },
       xaxis: {
-        categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+        categories: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
       },
 
       legend: {

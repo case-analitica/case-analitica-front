@@ -1,27 +1,27 @@
-<mat-card class="card">
-  <mat-card-content>
+<mat-card class="os-card">
+  <mat-card-content style="width: 100%;">
     <div>
-      <div>
-        <mat-card-title style="text-align: center;">Ordens de Serviço Abertas</mat-card-title>
+      <div style="text-align: center;">
+        <mat-card-title>Ordens de Serviço Abertas</mat-card-title>
       </div>
-      <div>
+      <div style="padding-left: 7rem;">
         <ul>
           <li>
-            <h6>
+            <h5 class="os-intern">
               <i></i>Externas
-            </h6>
+            </h5>
           </li>
           <li>
-            <h6>
+            <h5 class="os-extern">
               <i></i>Internas
-            </h6>
+            </h5>
           </li>
         </ul>
       </div>
     </div>
 
     <div>
-      <apx-chart
+      <apx-chart class="chart"
         [series]="chartOptions.series"
         [chart]="chartOptions.chart"
         [dataLabels]="chartOptions.dataLabels"
