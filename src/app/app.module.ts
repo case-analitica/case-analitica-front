@@ -1,3 +1,4 @@
+import { CustomerComponent } from './components/customer/customer-list/customer.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,6 +16,7 @@ import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { SublevelMenuComponent } from './layout/sidenav/sublevel-menu.component';
 import { NotificationComponent } from './shared/notifications/notification.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CustomerModule } from './components/customer/customer.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SidenavComponent,
     SublevelMenuComponent,
     NotificationComponent
+
   ],
   imports: [
     BrowserModule,

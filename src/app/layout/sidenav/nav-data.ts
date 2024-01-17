@@ -28,76 +28,76 @@ export const navbarData: INavbarData[] = [
     ]
   },
   {
-    routeLink: 'registration',
+    routeLink: 'register',
     icon: 'fal fa-folder-open',
     label: 'Cadastros',
     items: [
       {
-        routeLink: 'registration/users',
+        routeLink: 'users',
         label: 'Usuários'
       },
       {
-        routeLink: 'registration/customers',
+        routeLink: 'customers',
         label: 'Clientes'
       },
       {
-        routeLink: 'registration/contracts',
+        routeLink: 'contracts',
         label: 'Contratos',
         items: [
           {
-            routeLink: 'registration/contracts/active',
+            routeLink: 'contracts/active',
             label: 'Ativos',
           },
           {
-            routeLink: 'registration/contracts/inactive',
+            routeLink: 'contracts/inactive',
             label: 'Inativos',
           }
         ]
       },
       {
-        routeLink: 'registration/devices',
+        routeLink: 'devices',
         label: 'Equipamentos',
         items: [
           {
-            routeLink: 'registration/base-registration',
+            routeLink: 'base-registration',
             label: 'Cadastro Base',
             items: [
               {
-                routeLink: 'registration/base-registration/manufacturer',
+                routeLink: 'base-manufacturer',
                 label: 'Fabricantes'
               },
               {
-                routeLink: 'registration/base-registration/model',
+                routeLink: 'base-registration/model',
                 label: 'Modelos'
               },
               {
-                routeLink: 'registration/base-registration/device-group',
+                routeLink: 'base-registration/device-group',
                 label: 'Grupos de Equipamento'
               },
               {
-                routeLink: 'registration/base-registration/device-type',
+                routeLink: 'base-registration/device-type',
                 label: 'Tipos de Equipamento'
               }
             ]
           },
           {
-            routeLink: 'registration/devices/customer-devices',
+            routeLink: 'devices/customer-devices',
             label: 'Equipamentos de Cliente',
           },
           {
-            routeLink: 'registration/devices/calibration',
+            routeLink: 'devices/calibration',
             label: 'Calibração',
             items: [
               {
-                routeLink: 'registration/devices/calibration/inputs',
+                routeLink: 'devices/calibration/inputs',
                 label: 'Insumos'
               },
               {
-                routeLink: 'registration/devices/calibration/tools',
+                routeLink: 'devices/calibration/tools',
                 label: 'Ferramentas'
               },
               {
-                routeLink: 'registration/devices/calibration/certificate',
+                routeLink: 'devices/calibration/certificate',
                 label: 'Certificado de Calibração'
               },
             ]
