@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { first, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ApiResponse } from 'src/model/api-model/api-response.model';
+import { CustomerDevice } from 'src/model/customer-device/customer-device.model';
 import { Device } from 'src/model/device/device.model';
 
 @Injectable({
@@ -29,7 +30,7 @@ export class DeviceService {
     return this.httpClient.get(`${this.API}/${id}`);
   }
 
-  public update(id: number, data: Device) {
+  public update(id: number, data: CustomerDevice) {
     return this.httpClient.patch(`${this.API}/${id}`, data);
   }
 

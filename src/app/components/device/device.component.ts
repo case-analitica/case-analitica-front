@@ -1,43 +1,42 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSort } from '@angular/material/sort';
-import { MatPaginator } from '@angular/material/paginator';
-import { Customer } from 'src/model/customer/customer.model';
-import { MatTableDataSource } from '@angular/material/table';
-import { CustomerService } from 'src/app/service/customer.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { CustomerDetailComponent } from '../customer-detail/customer-detail.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { DeviceService } from 'src/app/service/device.service';
+import { CustomerDevice } from 'src/model/customer-device/customer-device.model';
 
 @Component({
-  selector: 'app-customer',
-  templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.scss'],
+  selector: 'app-device',
+  templateUrl: './device.component.html',
+  styleUrls: ['./device.component.scss']
 })
-export class CustomerComponent implements OnInit {
+export class DeviceComponent implements OnInit {
 
   searchForm: FormGroup;
 
-  displayedColumns = ['name', 'corporateName', 'email', 'details'];
-  dataSource = new MatTableDataSource<Customer>();
+
+  public displayedColumns = ['model', 'serialNumber', 'manufacturer', 'tag', 'type', 'group', 'details', 'delete'];
+  dataSource: MatTableDataSource<CustomerDevice>;
+  devices: CustomerDevice[];
 
   pageSize: number;
   length: number;
   pageIndex: number;
 
-  emailSort = "email";
-  nameSort = "nome";
-  corporateNameSort = "razao_social";
-  sortValue = "nome";
-  sortDirection = "asc";
-
   filterName: string;
   filterValue: string
+
+  sortValue = "description";
+  sortDirection = "asc";
+
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
-    private customerService: CustomerService,
+    private deviceService: DeviceService,
     private formBuilder: FormBuilder,
     private dialog: MatDialog
   ) {
@@ -51,16 +50,16 @@ export class CustomerComponent implements OnInit {
     this.filterValue = "";
     this.pageIndex = 0;
     this.pageSize = 10;
-
   }
 
   ngOnInit() {
-    this.getAll(this.filterName, this.filterValue, this.pageIndex, 'nome', 'asc', 10);
+    this.getAll(this.filterName, this.filterValue, this.pageIndex, 'model', 'asc', 10);
   }
 
   getAll(filterName: string, filterValue: string, pageIndex: number, sort: string, direction: string, pageSize: number) {
-    this.customerService.getAll(filterName, filterValue, pageIndex, sort, direction, pageSize).subscribe(
-      (response: any) => {
+    this.deviceService.getAll(filterName, filterValue, pageIndex, sort, direction, pageSize).subscribe({
+
+      next: (response: any) => {
         this.dataSource = response.data;
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
@@ -68,10 +67,20 @@ export class CustomerComponent implements OnInit {
         this.length = response.meta.totalRecords;
         this.pageIndex = response.meta.pageIndex;
       },
-      (error) => {
-        console.log(error);
-      }
-    );
+
+      error: (e) => {
+        console.error(e);
+      },
+
+    });
+  }
+
+  onSearch() {
+    if (this.searchForm.valid) {
+      this.filterName = this.searchForm.value.filterName;
+      this.filterValue = this.searchForm.value.filterValue;
+      this.getAll(this.filterName, this.filterValue, this.pageIndex, "model", this.sortDirection, this.pageSize);
+    }
   }
 
   onSort = (event: any) => {
@@ -84,12 +93,13 @@ export class CustomerComponent implements OnInit {
     this.getAll(this.filterName, this.filterValue, event.pageIndex, this.sortValue, this.sortDirection, event.pageSize);
   };
 
-  onSearch() {
-    if (this.searchForm.valid) {
-      this.filterName = this.searchForm.value.filterName;
-      this.filterValue = this.searchForm.value.filterValue;
-      this.getAll(this.filterName, this.filterValue, this.pageIndex, "nome", this.sortDirection, this.pageSize);
-    }
+  public customSort = (event: any) => {
+    console.log(event);
+  }
+
+  public doFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
   }
 
   onReset() {
@@ -97,14 +107,14 @@ export class CustomerComponent implements OnInit {
     this.filterValue = "";
     this.searchForm.reset();
     this.pageIndex = 0;
-    this.sortValue = "nome";
+    this.sortValue = "model";
     this.sortDirection = "asc";
     this.getAll(this.filterName, this.filterValue, this.pageIndex, this.sortValue, this.sortDirection, 10);
   }
 
   onDetails(element: any) {
-    this.customerService.getOne(element).subscribe((response: any) => {
-      this.dialog.open(CustomerDetailComponent, {
+    this.deviceService.getOne(element).subscribe((response: any) => {
+      this.dialog.open(DeviceComponent, {
         width: '100%',
         data: response.data[0]
       })
@@ -114,4 +124,13 @@ export class CustomerComponent implements OnInit {
       }
     )
   }
+
+  public redirectToUpdate = (id: string) => {
+
+  }
+
+  public redirectToDelete = (id: string) => {
+
+  }
+
 }

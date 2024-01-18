@@ -3,15 +3,14 @@ import { Injectable } from '@angular/core';
 import { first, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ApiResponse } from 'src/model/api-model/api-response.model';
-import { CustomerDevice } from 'src/model/customer-device/customer-device.model';
 import { Device } from 'src/model/device/device.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomerDeviceService {
+export class InstrumentService {
 
-  private readonly API = `${environment.urlApi}/customer-device`;
+  private readonly API = `${environment.urlApi}/device`;
 
   constructor(private httpClient: HttpClient) {
 
@@ -30,7 +29,7 @@ export class CustomerDeviceService {
     return this.httpClient.get(`${this.API}/${id}`);
   }
 
-  public update(id: number, data: CustomerDevice) {
+  public update(id: number, data: Device) {
     return this.httpClient.patch(`${this.API}/${id}`, data);
   }
 

@@ -1,4 +1,4 @@
-import { CustomerComponent } from './components/customer/customer-list/customer.component';
+import { CustomerComponent } from './components/customer/customer.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -17,6 +17,8 @@ import { SublevelMenuComponent } from './layout/sidenav/sublevel-menu.component'
 import { NotificationComponent } from './shared/notifications/notification.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomerModule } from './components/customer/customer.module';
+import { DeviceModule } from './components/device/device.module';
+
 
 @NgModule({
   declarations: [
@@ -37,8 +39,10 @@ import { CustomerModule } from './components/customer/customer.module';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    DashboardModule,
     FontAwesomeModule,
+    DashboardModule,
+    CustomerModule,
+    DeviceModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,28 +3,28 @@ import { Manufacturer } from "../manufacturer/manufacturer.model";
 export interface CustomerDevice {
   id: string;
   control: string;
-  deviceModel: CustomerDeviceModel;
+  model: CustomerDeviceModel;
   serialNumber: string;
   tag: string;
   customerId: string;
   accessories: string;
-  deviceType: CustomerDeviceType;
-  deviceGroup: CustomerDeviceGroup;
+  type: CustomerDeviceType;
+  group: CustomerDeviceGroup;
   manufacturer: Manufacturer;
   notes: string;
 }
 
 export interface CustomerDeviceModel {
   id: string;
-  model: string;
+  name: string;
 }
 
 export interface CustomerDeviceType {
   id: string;
-  type: string;
+  name: string;
 }
 
 export interface CustomerDeviceGroup {
   id: string;
-  group: string;
+  name: string;
 }

@@ -55,7 +55,7 @@ export const navbarData: INavbarData[] = [
         ]
       },
       {
-        routeLink: 'devices',
+        routeLink: 'instruments',
         label: 'Equipamentos',
         items: [
           {
@@ -81,7 +81,7 @@ export const navbarData: INavbarData[] = [
             ]
           },
           {
-            routeLink: 'devices/customer-devices',
+            routeLink: 'devices',
             label: 'Equipamentos de Cliente',
           },
           {
