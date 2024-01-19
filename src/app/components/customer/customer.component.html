@@ -1,20 +1,20 @@
 <div>
-  <h1>Lista de Clientes</h1>
+  <h1>Clientes</h1>
 </div>
 <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
-  <div style="text-align: center;">
-    <mat-form-field style="width: 10em; padding: 2em;">
+  <div class="search-form">
+    <mat-form-field class="search-form-field">
       <mat-label>Buscar por:</mat-label>
       <mat-select [(value)]="filterName" formControlName="filterName">
         <mat-option value="nome">Nome</mat-option>
         <mat-option value="email">E-mail</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field style="width: 30em; padding: 2em;">
+    <mat-form-field class="width-30">
       <input matInput type="text" placeholder="Filtro" formControlName="filterValue"/>
     </mat-form-field>
     <button mat-button color="primary" type="submit">
-      <mat-icon class="mat-18">search</mat-icon>
+      <mat-icon class="search-icon-2">search</mat-icon>
     </button>
     <button mat-raised-button color="warn" style="margin-left: 2em;" (click)="onReset()">Limpar Busca</button>
   </div>

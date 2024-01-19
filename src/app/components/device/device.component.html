@@ -2,21 +2,21 @@
   <h1>Equipamentos de Cliente</h1>
 </div>
 <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
-  <div style="text-align: center;">
-    <mat-form-field style="width: 15em; padding: 2em;">
+  <div class="search-form">
+    <mat-form-field class="search-form-field">
       <mat-label>Buscar por:</mat-label>
       <mat-select [(value)]="filterName" formControlName="filterName">
         <mat-option value="model">Modelo</mat-option>
         <mat-option value="serialNumber">N° de Série</mat-option>
         <mat-option value="manufacturer">Fabricante</mat-option>
-        <mat-option value="deviceType">Tipo</mat-option>
+        <mat-option value="type">Tipo</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field style="width: 30em; padding: 2em;">
+    <mat-form-field class="width-30">
       <input matInput type="text" placeholder="Filtro" formControlName="filterValue" />
     </mat-form-field>
     <button mat-button color="primary" type="submit">
-      <mat-icon class="mat-18">search</mat-icon>
+      <mat-icon class="search-icon-2">search</mat-icon>
     </button>
     <button mat-raised-button color="warn" style="margin-left: 2em;" (click)="onReset()">Limpar Busca</button>
   </div>
@@ -24,7 +24,7 @@
 
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortStart="desc"
-  (matSortChange)="customSort($event)">
+  (matSortChange)="onSort($event)">
 
   <ng-container matColumnDef="model">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Modelo </th>
@@ -77,6 +77,9 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<mat-paginator showFirstLastButtons (page)="onChangePage($event)" [length]="length" [pageSize]="pageSize"
-  [pageIndex]="pageIndex" [pageSizeOptions]="[10, 20, 50]">
+<mat-paginator showFirstLastButtons (page)="onChangePage($event)"
+  [length]="length"
+  [pageSize]="pageSize"
+  [pageIndex]="pageIndex"
+  [pageSizeOptions]="[10, 20, 50]">
 </mat-paginator>

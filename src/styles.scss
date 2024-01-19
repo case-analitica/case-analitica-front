@@ -29,4 +29,27 @@ body {
   .card-body {
     padding: 1rem 1.5rem;
   }
+
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search-form-field {
+  width: 15rem;
+  padding: 2rem;
+}
+
+.search-icon-2 {
+  font-size: 2rem !important;
+  height: 2rem !important;
+  width: 2rem !important;
+}
+
+.width-30 {
+  width: 30rem;
 }

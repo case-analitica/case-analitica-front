@@ -6,6 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { DeviceService } from 'src/app/service/device.service';
 import { CustomerDevice } from 'src/model/customer-device/customer-device.model';
+import { DeviceDetailComponent } from './device-detail/device-detail.component';
 
 @Component({
   selector: 'app-device',
@@ -28,7 +29,7 @@ export class DeviceComponent implements OnInit {
   filterName: string;
   filterValue: string
 
-  sortValue = "description";
+  sortValue = "model";
   sortDirection = "asc";
 
 
@@ -113,17 +114,23 @@ export class DeviceComponent implements OnInit {
   }
 
   onDetails(element: any) {
-    this.deviceService.getOne(element).subscribe((response: any) => {
-      this.dialog.open(DeviceComponent, {
-        width: '100%',
-        data: response.data[0]
-      })
-    },
-      (error) => {
-        console.log(error);
-      }
-    )
+    this.deviceService.getOne(element).subscribe({
+
+      next: (response: any) => {
+        this.dialog.open(DeviceDetailComponent, {
+          width: '100%',
+          data: response.data[0]
+        })
+      },
+
+      error: (e) => {
+        console.log(e);
+      },
+
+    });
   }
+
+
 
   public redirectToUpdate = (id: string) => {
 
