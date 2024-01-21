@@ -1,12 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, Optional, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { DeviceService } from 'src/app/service/device.service';
-import { CustomerDevice } from 'src/model/customer-device/customer-device.model';
+import { Device } from 'src/model/device/device.model';
 import { DeviceDetailComponent } from './device-detail/device-detail.component';
+import { NotificationComponent } from 'src/app/shared/notifications/notification.component';
+import { Notification } from 'src/model/api-model/notification.model';
 
 @Component({
   selector: 'app-device',
@@ -16,11 +18,12 @@ import { DeviceDetailComponent } from './device-detail/device-detail.component';
 export class DeviceComponent implements OnInit {
 
   searchForm: FormGroup;
+  notification: Notification;
 
 
   public displayedColumns = ['model', 'serialNumber', 'manufacturer', 'tag', 'type', 'group', 'details', 'delete'];
-  dataSource: MatTableDataSource<CustomerDevice>;
-  devices: CustomerDevice[];
+  dataSource: MatTableDataSource<Device>;
+  devices: Device[];
 
   pageSize: number;
   length: number;
@@ -130,14 +133,46 @@ export class DeviceComponent implements OnInit {
     });
   }
 
+  onDeleteDevice(id: number) {
+    this.notification = {
+      title: "Apagar Registro",
+      content: "Deseja realmente apagar o registro selecionado?",
+      type: "warning"
+    };
+    this.dialog.open(NotificationComponent, {
+      data: this.notification
+    }).afterClosed().subscribe({
 
+      next: (result) => {
+        if (result) {
+          this.deviceService.delete(id).subscribe({
 
-  public redirectToUpdate = (id: string) => {
+            next: () => {
+              this.notification = {
+                title: "Registro Apagado",
+                content: "O registro selecionado foi apagado com sucesso!",
+                type: "info"
+              };
 
-  }
+              this.dialog.open(NotificationComponent, {
+                data: this.notification
+              })
 
-  public redirectToDelete = (id: string) => {
+              this.getAll(this.filterName, this.filterValue, this.pageIndex, this.sortValue, this.sortDirection, this.pageSize);
+            },
 
+            error: (e) => {
+              console.log(e);
+            },
+          });
+        }
+      },
+
+      error: (e) => {
+        console.log(e);
+      },
+    })
   }
 
 }
+

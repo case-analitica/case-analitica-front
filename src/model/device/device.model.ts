@@ -1,13 +1,30 @@
 import { Manufacturer } from "../manufacturer/manufacturer.model";
 
 export interface Device {
-  id: string;
-  description: string;
-  localization: string;
-  deviceGroup: string;
-  manufacturer: Manufacturer;
-  model: string;
+  id: number;
+  control: string;
+  model: Model;
   serialNumber: string;
   tag: string;
-  calibStatus: string;
+  customerId: string;
+  accessories: string;
+  type: Type;
+  group: Group;
+  manufacturer: Manufacturer;
+  notes: string;
+}
+
+export interface Model {
+  id: string;
+  name: string;
+}
+
+export interface Type {
+  id: string;
+  name: string;
+}
+
+export interface Group {
+  id: string;
+  name: string;
 }

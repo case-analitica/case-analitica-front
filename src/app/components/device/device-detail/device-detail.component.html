@@ -1,1 +1,60 @@
-<p>customer-device-detail works!</p>
+<form [formGroup]="deviceForm">
+  <h1 mat-dialog-title>{{title}}</h1>
+  <div style="text-align: center;">
+    <div mat-dialog-content>
+      <div style="display: inline-block; width: 100%;">
+        <mat-form-field style="width: 25%; float: left; margin-right: 2.5%;">
+          <mat-label>Fabricante</mat-label>
+          <input matInput value="{{manufacturer.name}}" [readonly]="noEdit">
+        </mat-form-field>
+        <mat-form-field style="width: 45%; float: left;">
+          <mat-label>Modelo</mat-label>
+          <input matInput value="{{model.name}}" [readonly]="noEdit">
+        </mat-form-field>
+        <mat-form-field style="width: 25%; float: right;">
+          <mat-label>N° Série</mat-label>
+          <input matInput formControlName="serialNumber" [readonly]="noEdit">
+        </mat-form-field>
+        <mat-form-field style="width: 25%; float: left; margin-right: 5.5%;">
+          <mat-label>Controle</mat-label>
+          <input formControlName="control" matInput [readonly]="noEdit">
+        </mat-form-field>
+        <mat-form-field style="width: 20%; float: left; margin-right: 5.5%;">
+          <mat-label>TAG</mat-label>
+          <input matInput formControlName="tag" [readonly]="noEdit">
+        </mat-form-field>
+        <mat-form-field style="width: 20%; float: right;">
+          <mat-label>Tipo</mat-label>
+          <input matInput value="{{type.name}}" [readonly]="noEdit">
+        </mat-form-field>
+        <mat-form-field style="float: left; margin-right: 2em;">
+          <mat-label>Grupo</mat-label>
+          <input matInput value="{{group.name}}" [readonly]="noEdit">
+        </mat-form-field>
+      </div>
+      <div style="display: inline-block; width: 100%;">
+        <div style="width: 100%;">
+          <mat-form-field style="width: 60%; float: left;">
+            <mat-label>Cliente</mat-label>
+            <input matInput formControlName="customerId" [readonly]="noEdit">
+          </mat-form-field>
+          <mat-form-field style="width: 100%;">
+            <mat-label>Acessórios</mat-label>
+            <input matInput formControlName="accessories" [readonly]="noEdit">
+          </mat-form-field>
+          <mat-form-field style="width: 100%;">
+            <mat-label>Observações</mat-label>
+            <input matInput formControlName="notes" [readonly]="noEdit">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-actions style="float: right;">
+    <button mat-raised-button (click)="onCancel()" mat-raised-button color="warn">{{messageOnClose}}</button>
+    <button *ngIf="noEdit == true" mat-raised-button type="submit" color="primary" style="background-color: #02bb02; width: 11em;"
+      (click)="onEditDevice()">Alterar Registro</button>
+    <button *ngIf="noEdit == false" mat-raised-button type="submit" color="primary" style="background-color: #0057fa; width: 11em;"
+      (click)="onSubmit()">Salvar</button>
+  </div>
+</form>

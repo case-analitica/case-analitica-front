@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { first, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ApiResponse } from 'src/model/api-model/api-response.model';
-import { Device } from 'src/model/device/device.model';
+import { Device } from 'src/model/instrument/instrument.model';
 
 @Injectable({
   providedIn: 'root'
