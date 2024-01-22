@@ -30,8 +30,8 @@ export class InstrumentService {
     return this.httpClient.get(`${this.API}/${id}`);
   }
 
-  public update(id: number, data: Instrument) {
-    return this.httpClient.patch(`${this.API}/${id}`, data);
+  public update(data: Instrument) {
+    return this.httpClient.patch(`${this.API}`, data);
   }
 
   public delete(id: number) {

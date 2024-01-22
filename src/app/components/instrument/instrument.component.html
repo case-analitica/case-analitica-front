@@ -1,5 +1,5 @@
 <div>
-  <h1>Padrões</h1>
+  <h1>Instrumentos</h1>
 </div>
 <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
   <div class="search-form">
@@ -57,7 +57,7 @@
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef> Deletar </th>
     <td mat-cell *matCellDef="let element">
-      <button mat-icon-button color="warn" (click)="onDeleteStandard(element.id)">
+      <button mat-icon-button color="warn" (click)="onDeleteInstrument(element.id)">
         <mat-icon class="mat-18">delete</mat-icon>
       </button>
     </td>

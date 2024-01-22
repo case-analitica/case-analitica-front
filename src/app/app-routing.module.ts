@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CustomerComponent } from './components/customer/customer.component';
 import { DeviceComponent } from './components/device/device.component';
 import { StandardComponent } from './components/standard/standard.component';
+import { InstrumentComponent } from './components/instrument/instrument.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -27,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: 'instruments',
-    component: StandardComponent
+    component: InstrumentComponent
   },
 ];
 

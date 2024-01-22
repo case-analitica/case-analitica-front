@@ -2,7 +2,6 @@ import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import * as _ from 'lodash';
-import { CustomerDetailComponent } from '../../customer/customer-detail/customer-detail.component';
 import { Device, Model } from 'src/model/device/device.model';
 import { DeviceService } from 'src/app/service/device.service';
 import { Manufacturer } from 'src/model/manufacturer/manufacturer.model';

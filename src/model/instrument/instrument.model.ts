@@ -13,7 +13,7 @@ export interface Instrument {
 }
 
 export interface InstrumentModel {
-  id?: number;
-  name?: string;
-  image?: string;
+  id: number;
+  name: string;
+  image: string;
 }

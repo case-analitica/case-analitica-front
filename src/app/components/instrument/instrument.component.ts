@@ -4,26 +4,26 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { InstrumentService } from 'src/app/service/instrument.service';
 import { NotificationComponent } from 'src/app/shared/notifications/notification.component';
 import { Notification } from 'src/model/api-model/notification.model';
-import { StandardDetailComponent } from './standard-detail/standard-detail.component';
-import { Standard } from 'src/model/standard/standard.model';
-import { StandardService } from 'src/app/service/standard.service';
+import { Instrument } from 'src/model/instrument/instrument.model';
+import { InstrumentDetailComponent } from './instrument-detail/instrument-detail.component';
 
 @Component({
-  selector: 'app-standard',
-  templateUrl: './standard.component.html',
-  styleUrls: ['./standard.component.scss']
+  selector: 'app-instrument',
+  templateUrl: './instrument.component.html',
+  styleUrls: ['./instrument.component.scss']
 })
-export class StandardComponent {
+export class InstrumentComponent {
 
   searchForm: FormGroup;
   notification: Notification;
 
 
   public displayedColumns = ['manufacturer', 'description', 'serialNumber', 'toolGroup', 'details', 'delete'];
-  dataSource: MatTableDataSource<Standard>;
-  standards: Standard[];
+  dataSource: MatTableDataSource<Instrument>;
+  standards: Instrument[];
 
   pageSize: number;
   length: number;
@@ -32,7 +32,7 @@ export class StandardComponent {
   filterName: string;
   filterValue: string
 
-  sortValue = "description";
+  sortValue = "model";
   sortDirection = "asc";
 
 
@@ -40,7 +40,7 @@ export class StandardComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
-    private standardService: StandardService,
+    private instrumentService: InstrumentService,
     private formBuilder: FormBuilder,
     private dialog: MatDialog
   ) {
@@ -57,11 +57,11 @@ export class StandardComponent {
   }
 
   ngOnInit() {
-    this.getAll(this.filterName, this.filterValue, this.pageIndex, 'description', 'asc', 10);
+    this.getAll(this.filterName, this.filterValue, this.pageIndex, 'model', 'asc', 10);
   }
 
   getAll(filterName: string, filterValue: string, pageIndex: number, sort: string, direction: string, pageSize: number) {
-    this.standardService.getAll(filterName, filterValue, pageIndex, sort, direction, pageSize).subscribe({
+    this.instrumentService.getAll(filterName, filterValue, pageIndex, sort, direction, pageSize).subscribe({
 
       next: (response: any) => {
         this.dataSource = response.data;
@@ -83,7 +83,7 @@ export class StandardComponent {
     if (this.searchForm.valid) {
       this.filterName = this.searchForm.value.filterName;
       this.filterValue = this.searchForm.value.filterValue;
-      this.getAll(this.filterName, this.filterValue, this.pageIndex, "description", this.sortDirection, this.pageSize);
+      this.getAll(this.filterName, this.filterValue, this.pageIndex, "model", this.sortDirection, this.pageSize);
     }
   }
 
@@ -117,10 +117,10 @@ export class StandardComponent {
   }
 
   onDetails(element: any) {
-    this.standardService.getOne(element).subscribe({
+    this.instrumentService.getOne(element).subscribe({
 
       next: (response: any) => {
-        this.dialog.open(StandardDetailComponent, {
+        this.dialog.open(InstrumentDetailComponent, {
           width: '100%',
           data: response.data[0]
         })
@@ -133,7 +133,7 @@ export class StandardComponent {
     });
   }
 
-  onDeleteStandard(id: number) {
+  onDeleteInstrument(id: number) {
     this.notification = {
       title: "Apagar Registro",
       content: "Deseja realmente apagar o registro selecionado?",
@@ -145,7 +145,7 @@ export class StandardComponent {
 
       next: (result) => {
         if (result) {
-          this.standardService.delete(id).subscribe({
+          this.instrumentService.delete(id).subscribe({
 
             next: () => {
               this.notification = {
@@ -175,5 +175,3 @@ export class StandardComponent {
   }
 
 }
-
-

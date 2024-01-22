@@ -1,4 +1,4 @@
-import { CustomerComponent } from './components/customer/customer.component';
+import { InstrumentModule } from './components/instrument/instrument.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -19,7 +19,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomerModule } from './components/customer/customer.module';
 import { DeviceModule } from './components/device/device.module';
 import { StandardModule } from './components/standard/standard.module';
-
 
 @NgModule({
   declarations: [
@@ -44,6 +43,7 @@ import { StandardModule } from './components/standard/standard.module';
     CustomerModule,
     DeviceModule,
     StandardModule,
+    InstrumentModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
