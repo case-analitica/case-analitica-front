@@ -41,6 +41,18 @@ export const navbarData: INavbarData[] = [
         label: 'Clientes'
       },
       {
+        routeLink: 'devices',
+        label: 'Equipamentos'
+      },
+      {
+        routeLink: 'standards',
+        label: 'Padrões'
+      },
+      {
+        routeLink: 'instruments',
+        label: 'Instrumentos'
+      },
+      {
         routeLink: 'contracts',
         label: 'Contratos',
         items: [
@@ -55,52 +67,24 @@ export const navbarData: INavbarData[] = [
         ]
       },
       {
-        routeLink: 'instruments',
-        label: 'Equipamentos',
+        routeLink: 'base-register',
+        label: 'Cadastros Base',
         items: [
           {
-            routeLink: 'base-registration',
-            label: 'Cadastro Base',
-            items: [
-              {
-                routeLink: 'base-manufacturer',
-                label: 'Fabricantes'
-              },
-              {
-                routeLink: 'base-registration/model',
-                label: 'Modelos'
-              },
-              {
-                routeLink: 'base-registration/device-group',
-                label: 'Grupos de Equipamento'
-              },
-              {
-                routeLink: 'base-registration/device-type',
-                label: 'Tipos de Equipamento'
-              }
-            ]
+            routeLink: 'base-manufacturer',
+            label: 'Fabricantes'
           },
           {
-            routeLink: 'devices',
-            label: 'Equipamentos de Cliente',
+            routeLink: 'base-registration/model',
+            label: 'Modelos'
           },
           {
-            routeLink: 'devices/calibration',
-            label: 'Calibração',
-            items: [
-              {
-                routeLink: 'devices/calibration/inputs',
-                label: 'Insumos'
-              },
-              {
-                routeLink: 'devices/calibration/tools',
-                label: 'Ferramentas'
-              },
-              {
-                routeLink: 'devices/calibration/certificate',
-                label: 'Certificado de Calibração'
-              },
-            ]
+            routeLink: 'base-registration/device-group',
+            label: 'Grupos de Equipamento'
+          },
+          {
+            routeLink: 'base-registration/device-type',
+            label: 'Tipos de Equipamento'
           }
         ]
       },

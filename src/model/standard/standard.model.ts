@@ -1,19 +1,20 @@
 import { Group, ToolGroup } from "../commons/commons.model";
 import { Manufacturer } from "../manufacturer/manufacturer.model";
 
-export interface Instrument {
-  id: string;
+export interface Standard {
+  id: number;
   description: string;
   toolGroup: ToolGroup;
   group: Group;
   manufacturer: Manufacturer;
-  model: InstrumentModel;
+  standardName: StandardName;
   serialNumber: string;
-  tag: string;
+  tag?: string
 }
 
-export interface InstrumentModel {
-  id?: number;
-  name?: string;
-  image?: string;
+export interface StandardName {
+  id: number;
+  name: string;
+  image: string;
 }
+

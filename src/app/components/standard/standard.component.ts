@@ -4,26 +4,26 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { DeviceService } from 'src/app/service/device.service';
-import { Device } from 'src/model/device/device.model';
-import { DeviceDetailComponent } from './device-detail/device-detail.component';
 import { NotificationComponent } from 'src/app/shared/notifications/notification.component';
 import { Notification } from 'src/model/api-model/notification.model';
+import { StandardDetailComponent } from './standard-detail/standard-detail.component';
+import { Standard } from 'src/model/standard/standard.model';
+import { StandardService } from 'src/app/service/standard.service';
 
 @Component({
-  selector: 'app-device',
-  templateUrl: './device.component.html',
-  styleUrls: ['./device.component.scss']
+  selector: 'app-standard',
+  templateUrl: './standard.component.html',
+  styleUrls: ['./standard.component.scss']
 })
-export class DeviceComponent implements OnInit {
+export class StandardComponent {
 
   searchForm: FormGroup;
   notification: Notification;
 
 
-  public displayedColumns = ['model', 'serialNumber', 'manufacturer', 'tag', 'type', 'group', 'details', 'delete'];
-  dataSource: MatTableDataSource<Device>;
-  devices: Device[];
+  public displayedColumns = ['manufacturer', 'description', 'serialNumber', 'toolGroup', 'details', 'delete'];
+  dataSource: MatTableDataSource<Standard>;
+  standards: Standard[];
 
   pageSize: number;
   length: number;
@@ -32,7 +32,7 @@ export class DeviceComponent implements OnInit {
   filterName: string;
   filterValue: string
 
-  sortValue = "model";
+  sortValue = "standardName";
   sortDirection = "asc";
 
 
@@ -40,7 +40,7 @@ export class DeviceComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
-    private deviceService: DeviceService,
+    private standardService: StandardService,
     private formBuilder: FormBuilder,
     private dialog: MatDialog
   ) {
@@ -57,11 +57,11 @@ export class DeviceComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAll(this.filterName, this.filterValue, this.pageIndex, 'model', 'asc', 10);
+    this.getAll(this.filterName, this.filterValue, this.pageIndex, 'standardName', 'asc', 10);
   }
 
   getAll(filterName: string, filterValue: string, pageIndex: number, sort: string, direction: string, pageSize: number) {
-    this.deviceService.getAll(filterName, filterValue, pageIndex, sort, direction, pageSize).subscribe({
+    this.standardService.getAll(filterName, filterValue, pageIndex, sort, direction, pageSize).subscribe({
 
       next: (response: any) => {
         this.dataSource = response.data;
@@ -83,7 +83,7 @@ export class DeviceComponent implements OnInit {
     if (this.searchForm.valid) {
       this.filterName = this.searchForm.value.filterName;
       this.filterValue = this.searchForm.value.filterValue;
-      this.getAll(this.filterName, this.filterValue, this.pageIndex, "model", this.sortDirection, this.pageSize);
+      this.getAll(this.filterName, this.filterValue, this.pageIndex, "standardName", this.sortDirection, this.pageSize);
     }
   }
 
@@ -117,10 +117,10 @@ export class DeviceComponent implements OnInit {
   }
 
   onDetails(element: any) {
-    this.deviceService.getOne(element).subscribe({
+    this.standardService.getOne(element).subscribe({
 
       next: (response: any) => {
-        this.dialog.open(DeviceDetailComponent, {
+        this.dialog.open(StandardDetailComponent, {
           width: '100%',
           data: response.data[0]
         })
@@ -133,7 +133,7 @@ export class DeviceComponent implements OnInit {
     });
   }
 
-  onDeleteDevice(id: number) {
+  onDeleteStandard(id: number) {
     this.notification = {
       title: "Apagar Registro",
       content: "Deseja realmente apagar o registro selecionado?",
@@ -145,7 +145,7 @@ export class DeviceComponent implements OnInit {
 
       next: (result) => {
         if (result) {
-          this.deviceService.delete(id).subscribe({
+          this.standardService.delete(id).subscribe({
 
             next: () => {
               this.notification = {
@@ -175,4 +175,5 @@ export class DeviceComponent implements OnInit {
   }
 
 }
+
 

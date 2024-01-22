@@ -18,6 +18,7 @@ import { NotificationComponent } from './shared/notifications/notification.compo
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomerModule } from './components/customer/customer.module';
 import { DeviceModule } from './components/device/device.module';
+import { StandardModule } from './components/standard/standard.module';
 
 
 @NgModule({
@@ -27,8 +28,7 @@ import { DeviceModule } from './components/device/device.module';
     NavbarComponent,
     SidenavComponent,
     SublevelMenuComponent,
-    NotificationComponent
-
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +43,7 @@ import { DeviceModule } from './components/device/device.module';
     DashboardModule,
     CustomerModule,
     DeviceModule,
+    StandardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

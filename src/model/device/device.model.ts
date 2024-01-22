@@ -1,3 +1,4 @@
+import { Group, Type } from "../commons/commons.model";
 import { Manufacturer } from "../manufacturer/manufacturer.model";
 
 export interface Device {
@@ -15,16 +16,6 @@ export interface Device {
 }
 
 export interface Model {
-  id: string;
-  name: string;
-}
-
-export interface Type {
-  id: string;
-  name: string;
-}
-
-export interface Group {
   id: string;
   name: string;
 }
