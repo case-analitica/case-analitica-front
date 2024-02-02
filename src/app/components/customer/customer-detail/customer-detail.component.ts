@@ -1,17 +1,26 @@
 import { Component, OnInit, Optional, Inject } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { FormGroup, FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { Address } from 'src/model/address/address.model';
 import { Contact } from 'src/model/address/contact.model';
 import { Customer } from 'src/model/customer/customer.model';
 import { Notification } from 'src/model/api-model/notification.model';
 import { CustomerAddressComponent } from '../customer-address-add/customer-address.component';
 import { CustomerService } from 'src/app/service/customer.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
+import { NgIf, NgFor } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
-  selector: 'app-customer-detail',
-  templateUrl: './customer-detail.component.html',
-  styleUrls: ['./customer-detail.component.scss']
+    selector: 'app-customer-detail',
+    templateUrl: './customer-detail.component.html',
+    styleUrls: ['./customer-detail.component.scss'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, MatDialogModule, MatFormFieldModule, MatInputModule, NgIf, MatCardModule, NgFor, MatDividerModule, MatButtonModule, MatIconModule]
 })
 export class CustomerDetailComponent implements OnInit {
 

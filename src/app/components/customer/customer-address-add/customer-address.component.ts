@@ -1,16 +1,24 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { Address } from 'src/model/address/address.model';
 import * as _ from 'lodash';
 import { CustomerService } from 'src/app/service/customer.service';
 import { Notification } from 'src/model/api-model/notification.model';
 import { NotificationComponent } from 'src/app/shared/notifications/notification.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
-  selector: 'app-customer-address',
-  templateUrl: './customer-address.component.html',
-  styleUrls: ['./customer-address.component.scss']
+    selector: 'app-customer-address',
+    templateUrl: './customer-address.component.html',
+    styleUrls: ['./customer-address.component.scss'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatOptionModule, MatDialogModule, MatButtonModule]
 })
 export class CustomerAddressComponent implements OnInit {
 

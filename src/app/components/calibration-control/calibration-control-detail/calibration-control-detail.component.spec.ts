@@ -8,8 +8,8 @@ describe('CalibrationControlDetailComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CalibrationControlDetailComponent]
-    });
+    imports: [CalibrationControlDetailComponent]
+});
     fixture = TestBed.createComponent(CalibrationControlDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

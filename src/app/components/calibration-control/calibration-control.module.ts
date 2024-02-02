@@ -6,12 +6,10 @@ import { CalibrationControlDetailComponent } from './calibration-control-detail/
 
 
 @NgModule({
-  declarations: [
-    CalibrationControlComponent,
-    CalibrationControlDetailComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+        CommonModule,
+        CalibrationControlComponent,
+        CalibrationControlDetailComponent
+    ]
 })
 export class CalibrationControlModule { }

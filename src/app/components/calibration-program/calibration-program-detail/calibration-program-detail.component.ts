@@ -1,17 +1,23 @@
 import { Component, Inject, Optional } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import * as _ from 'lodash';
 import { CalibrationProgramService } from 'src/app/service/calibration-program.service';
 import { NotificationComponent } from 'src/app/shared/notifications/notification.component';
 import { Notification } from 'src/model/api-model/notification.model';
 import { CalibrationProgram, DeviceModel } from 'src/model/calibration/calibration-program.model';
+import { NgIf } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @Component({
-  selector: 'app-calibration-program-detail',
-  templateUrl: './calibration-program-detail.component.html',
-  styleUrls: ['./calibration-program-detail.component.scss']
+    selector: 'app-calibration-program-detail',
+    templateUrl: './calibration-program-detail.component.html',
+    styleUrls: ['./calibration-program-detail.component.scss'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatButtonModule, NgIf]
 })
 export class CalibrationProgramDetailComponent {
 

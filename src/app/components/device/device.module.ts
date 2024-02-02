@@ -6,15 +6,13 @@ import { DeviceComponent } from './device.component';
 import { DeviceDetailComponent } from './device-detail/device-detail.component';
 
 @NgModule({
-  declarations: [
-    DeviceComponent,
-    DeviceDetailComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MaterialModule,
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MaterialModule,
+        DeviceComponent,
+        DeviceDetailComponent,
+    ]
 })
 export class DeviceModule { }

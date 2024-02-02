@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import * as _ from 'lodash';
 import { Manufacturer } from 'src/model/manufacturer/manufacturer.model';
 import { NotificationComponent } from 'src/app/shared/notifications/notification.component';
@@ -8,11 +8,17 @@ import { Notification } from 'src/model/api-model/notification.model';
 import { Group, ToolGroup, Type } from 'src/model/commons/commons.model';
 import { StandardService } from 'src/app/service/standard.service';
 import { Standard, StandardName } from 'src/model/standard/standard.model';
+import { NgIf } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
-  selector: 'app-standard-detail',
-  templateUrl: './standard-detail.component.html',
-  styleUrls: ['./standard-detail.component.scss']
+    selector: 'app-standard-detail',
+    templateUrl: './standard-detail.component.html',
+    styleUrls: ['./standard-detail.component.scss'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatButtonModule, NgIf]
 })
 export class StandardDetailComponent {
 

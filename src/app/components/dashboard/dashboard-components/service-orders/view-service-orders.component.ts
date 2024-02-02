@@ -1,18 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import {
-  ApexAxisChartSeries,
-  ApexChart,
-  ChartComponent,
-  ApexDataLabels,
-  ApexPlotOptions,
-  ApexYAxis,
-  ApexLegend,
-  ApexStroke,
-  ApexXAxis,
-  ApexFill,
-  ApexTooltip,
-  ApexGrid
-} from "ng-apexcharts";
+import { ApexAxisChartSeries, ApexChart, ChartComponent, ApexDataLabels, ApexPlotOptions, ApexYAxis, ApexLegend, ApexStroke, ApexXAxis, ApexFill, ApexTooltip, ApexGrid, NgApexchartsModule } from "ng-apexcharts";
+import { MatCardModule } from "@angular/material/card";
 
 export interface ChartOptions {
   series: ApexAxisChartSeries;
@@ -28,9 +16,11 @@ export interface ChartOptions {
   grid: ApexGrid;
 }
 @Component({
-  selector: 'app-view-service-orders',
-  templateUrl: './view-service-orders.component.html',
-  styleUrls: ['./view-service-orders.component.scss']
+    selector: 'app-view-service-orders',
+    templateUrl: './view-service-orders.component.html',
+    styleUrls: ['./view-service-orders.component.scss'],
+    standalone: true,
+    imports: [MatCardModule, NgApexchartsModule]
 })
 export class ViewServiceOrdersComponent {
 

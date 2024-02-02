@@ -8,15 +8,13 @@ import { MaterialModule } from 'src/app/shared/material/app.material.module';
 
 
 @NgModule({
-  declarations: [
-    InstrumentComponent,
-    InstrumentDetailComponent,
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MaterialModule,
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MaterialModule,
+        InstrumentComponent,
+        InstrumentDetailComponent,
+    ]
 })
 export class InstrumentModule { }

@@ -8,15 +8,13 @@ import { StandardDetailComponent } from './standard-detail/standard-detail.compo
 
 
 @NgModule({
-  declarations: [
-    StandardComponent,
-    StandardDetailComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MaterialModule,
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MaterialModule,
+        StandardComponent,
+        StandardDetailComponent,
+    ]
 })
 export class StandardModule { }

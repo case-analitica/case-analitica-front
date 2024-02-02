@@ -1,12 +1,16 @@
 import { CalibrationDueService } from '../../../../../service/calibration-due.service';
 import { Component, OnInit } from "@angular/core";
-import { MatTableDataSource } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { CalibrationsDue } from "src/model/calibration/calibration-due.model";
+import { NgIf } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
-  selector: 'app-view-month-calibrations',
-  templateUrl: './view-month-calibrations.component.html',
-  styleUrls: ['./view-month-calibrations.component.scss']
+    selector: 'app-view-month-calibrations',
+    templateUrl: './view-month-calibrations.component.html',
+    styleUrls: ['./view-month-calibrations.component.scss'],
+    standalone: true,
+    imports: [MatCardModule, MatTableModule, NgIf]
 })
 export class ViewMonthCalibrationsComponent implements OnInit {
 

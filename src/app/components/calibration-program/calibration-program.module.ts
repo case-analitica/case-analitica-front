@@ -8,15 +8,13 @@ import { MaterialModule } from 'src/app/shared/material/app.material.module';
 
 
 @NgModule({
-  declarations: [
-    CalibrationProgramComponent,
-    CalibrationProgramDetailComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MaterialModule,
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MaterialModule,
+        CalibrationProgramComponent,
+        CalibrationProgramDetailComponent,
+    ]
 })
 export class CalibrationProgramModule { }
