@@ -53,6 +53,20 @@ export const navbarData: INavbarData[] = [
         label: 'Instrumentos'
       },
       {
+        routeLink: 'calibration',
+        label: 'Calibração',
+        items: [
+          {
+            routeLink: 'calibration/calibration-program',
+            label: 'Programa de Calibração',
+          },
+          {
+            routeLink: 'calibration/calibration-control',
+            label: 'Controle de Calibração',
+          }
+        ]
+      },
+      {
         routeLink: 'contracts',
         label: 'Contratos',
         items: [

@@ -1,7 +1,7 @@
-import { CalibrationService } from '../../../../../service/calibration.service';
+import { CalibrationDueService } from '../../../../../service/calibration-due.service';
 import { Component, OnInit } from "@angular/core";
 import { MatTableDataSource } from '@angular/material/table';
-import { CalibrationsDue } from "src/model/calibration/calibration.model";
+import { CalibrationsDue } from "src/model/calibration/calibration-due.model";
 
 @Component({
   selector: 'app-view-month-calibrations',
@@ -14,10 +14,10 @@ export class ViewMonthCalibrationsComponent implements OnInit {
   dataSource: MatTableDataSource<CalibrationsDue>;
   isEmptyData = false;
 
-  constructor(private calibrationService: CalibrationService) { }
+  constructor(private calibrationDueService: CalibrationDueService) { }
 
   ngOnInit() {
-    this.calibrationService.getCalibrationDueInCurrentMonth().subscribe({
+    this.calibrationDueService.getCalibrationDueInCurrentMonth().subscribe({
 
       next: (response: any) => {
         if(response.data){

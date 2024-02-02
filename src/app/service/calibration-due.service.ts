@@ -7,7 +7,7 @@ import { ApiResponse } from 'src/model/api-model/api-response.model';
 @Injectable({
   providedIn: 'root'
 })
-export class CalibrationService {
+export class CalibrationDueService {
 
   private readonly API = `${environment.urlApi}/calibration-due`;
 

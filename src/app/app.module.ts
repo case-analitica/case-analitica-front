@@ -19,6 +19,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomerModule } from './components/customer/customer.module';
 import { DeviceModule } from './components/device/device.module';
 import { StandardModule } from './components/standard/standard.module';
+import { CalibrationProgramModule } from './components/calibration-program/calibration-program.module';
+import { CalibrationControlModule } from './components/calibration-control/calibration-control.module';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { StandardModule } from './components/standard/standard.module';
     DeviceModule,
     StandardModule,
     InstrumentModule,
+    CalibrationProgramModule,
+    CalibrationControlModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

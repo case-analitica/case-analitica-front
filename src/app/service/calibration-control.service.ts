@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 import { first, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ApiResponse } from 'src/model/api-model/api-response.model';
-import { Standard } from 'src/model/standard/standard.model';
+import { CalibrationControl } from 'src/model/calibration/calibration-control.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StandardService {
+export class CalibrationControlService {
 
-  private readonly API = `${environment.urlApi}/standard`;
+  private readonly API = `${environment.urlApi}/calibration-control`;
 
   constructor(private httpClient: HttpClient) {
 
@@ -20,24 +20,23 @@ export class StandardService {
     return this.httpClient.get<ApiResponse[]>(`${this.API}?filterName=${filterName}&filterValue=${filterValue}&page=${pageIndex}&sort=${sort}&direction=${direction}&pageSize=${pageSize}`)
       .pipe(
         first(),
-        tap(standards => console.log(standards))
+        tap(calibrations => console.log(calibrations))
       );
-
   }
 
   public getOne(id: number) {
-    return this.httpClient.get(`${this.API}/${id}`)
+    return this.httpClient.get<ApiResponse[]>(`${this.API}/${id}`)
       .pipe(
         first(),
-        tap(standard => console.log(standard))
-      );;
+        tap(calibration => console.log(calibration))
+      );
   }
 
-  public update(standard: Standard) {
-    return this.httpClient.patch(`${this.API}`, standard)
+  public update(calibrationControl: CalibrationControl) {
+    return this.httpClient.patch(`${this.API}`, calibrationControl)
       .pipe(
         first(),
-        tap(standard => console.log(standard))
+        tap(calibrationControl => console.log(calibrationControl))
       );;
   }
 
@@ -45,15 +44,15 @@ export class StandardService {
     return this.httpClient.delete(`${this.API}/${id}`)
       .pipe(
         first(),
-        tap(standard => console.log(standard))
+        tap(calibrationControl => console.log(calibrationControl))
       );
   }
 
-  public save(standard: any) {
-    return this.httpClient.post(`${this.API}`, standard)
+  public save(calibrationControl: CalibrationControl) {
+    return this.httpClient.post(`${this.API}`, calibrationControl)
       .pipe(
         first(),
-        tap(standard => console.log(standard))
+        tap(calibrationControl => console.log(calibrationControl))
       );
   }
 
