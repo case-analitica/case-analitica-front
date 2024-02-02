@@ -6,7 +6,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { CustomerService } from 'src/app/service/customer.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -15,23 +15,24 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
-    selector: 'app-customer',
-    templateUrl: './customer.component.html',
-    styleUrls: ['./customer.component.scss'],
-    standalone: true,
-    imports: [
-        FormsModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatSelectModule,
-        MatOptionModule,
-        MatInputModule,
-        MatButtonModule,
-        MatIconModule,
-        MatTableModule,
-        MatSortModule,
-        MatPaginatorModule,
-    ],
+  selector: 'app-customer',
+  templateUrl: './customer.component.html',
+  styleUrls: ['./customer.component.scss'],
+  standalone: true,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatDialogModule,
+  ],
 })
 export class CustomerComponent implements OnInit {
 

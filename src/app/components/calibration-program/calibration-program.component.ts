@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -9,8 +9,6 @@ import { NotificationComponent } from 'src/app/shared/notifications/notification
 import { Notification } from 'src/model/api-model/notification.model';
 import { CalibrationProgram } from 'src/model/calibration/calibration-program.model';
 import { CalibrationProgramDetailComponent } from './calibration-program-detail/calibration-program-detail.component';
-import { Observable } from 'rxjs';
-import { ApiResponse } from 'src/model/api-model/api-response.model';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -19,11 +17,24 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
-    selector: 'app-calibration-program',
-    templateUrl: './calibration-program.component.html',
-    styleUrls: ['./calibration-program.component.scss'],
-    standalone: true,
-    imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule, MatSortModule, MatPaginatorModule]
+  selector: 'app-calibration-program',
+  templateUrl: './calibration-program.component.html',
+  styleUrls: ['./calibration-program.component.scss'],
+  standalone: true,
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatDialogModule,
+  ]
 })
 export class CalibrationProgramComponent {
 

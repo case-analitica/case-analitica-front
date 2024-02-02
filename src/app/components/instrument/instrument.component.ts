@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -21,7 +21,20 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     templateUrl: './instrument.component.html',
     styleUrls: ['./instrument.component.scss'],
     standalone: true,
-    imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule, MatSortModule, MatPaginatorModule]
+    imports: [
+      FormsModule,
+      ReactiveFormsModule,
+      MatFormFieldModule,
+      MatSelectModule,
+      MatOptionModule,
+      MatInputModule,
+      MatButtonModule,
+      MatIconModule,
+      MatTableModule,
+      MatSortModule,
+      MatPaginatorModule,
+      MatDialogModule,
+    ]
 })
 export class InstrumentComponent {
 
