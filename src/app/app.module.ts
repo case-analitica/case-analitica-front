@@ -1,4 +1,4 @@
-import { InstrumentModule } from './components/instrument/instrument.module';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,45 +8,37 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule } from './shared/material/app.material.module';
-import { DashboardModule } from './components/dashboard/dashboard.module';
+
+
 import { BodyComponent } from './layout/body/body.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { SublevelMenuComponent } from './layout/sidenav/sublevel-menu.component';
 import { NotificationComponent } from './shared/notifications/notification.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CustomerModule } from './components/customer/customer.module';
-import { DeviceModule } from './components/device/device.module';
-import { StandardModule } from './components/standard/standard.module';
-import { CalibrationProgramModule } from './components/calibration-program/calibration-program.module';
-import { CalibrationControlModule } from './components/calibration-control/calibration-control.module';
+
+
+
+
+
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        HttpClientModule,
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        FontAwesomeModule,
-        DashboardModule,
-        CustomerModule,
-        DeviceModule,
-        StandardModule,
-        InstrumentModule,
-        CalibrationProgramModule,
-        CalibrationControlModule,
-        BodyComponent,
-        NavbarComponent,
-        SidenavComponent,
-        SublevelMenuComponent,
-        NotificationComponent,
-    ],
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    BodyComponent,
+    NavbarComponent,
+    SidenavComponent,
+    SublevelMenuComponent,
+    NotificationComponent,
+],
     providers: [],
     bootstrap: [AppComponent]
 })
