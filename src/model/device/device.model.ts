@@ -1,13 +1,21 @@
+import { Group, Type } from "../commons/commons.model";
 import { Manufacturer } from "../manufacturer/manufacturer.model";
 
 export interface Device {
-  id: string;
-  description: string;
-  localization: string;
-  deviceGroup: string;
-  manufacturer: Manufacturer;
-  model: string;
+  id: number;
+  control: string;
+  model: Model;
   serialNumber: string;
   tag: string;
-  calibStatus: string;
+  customerId: string;
+  accessories: string;
+  type: Type;
+  group: Group;
+  manufacturer: Manufacturer;
+  notes: string;
+}
+
+export interface Model {
+  id: string;
+  name: string;
 }

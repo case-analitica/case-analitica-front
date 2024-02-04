@@ -28,79 +28,77 @@ export const navbarData: INavbarData[] = [
     ]
   },
   {
-    routeLink: 'registration',
+    routeLink: 'register',
     icon: 'fal fa-folder-open',
     label: 'Cadastros',
     items: [
       {
-        routeLink: 'registration/users',
+        routeLink: 'users',
         label: 'Usuários'
       },
       {
-        routeLink: 'registration/customers',
+        routeLink: 'customers',
         label: 'Clientes'
       },
       {
-        routeLink: 'registration/contracts',
+        routeLink: 'devices',
+        label: 'Equipamentos'
+      },
+      {
+        routeLink: 'standards',
+        label: 'Padrões'
+      },
+      {
+        routeLink: 'instruments',
+        label: 'Instrumentos'
+      },
+      {
+        routeLink: 'calibration',
+        label: 'Calibração',
+        items: [
+          {
+            routeLink: 'calibration/calibration-program',
+            label: 'Programa de Calibração',
+          },
+          {
+            routeLink: 'calibration/calibration-control',
+            label: 'Controle de Calibração',
+          }
+        ]
+      },
+      {
+        routeLink: 'contracts',
         label: 'Contratos',
         items: [
           {
-            routeLink: 'registration/contracts/active',
+            routeLink: 'contracts/active',
             label: 'Ativos',
           },
           {
-            routeLink: 'registration/contracts/inactive',
+            routeLink: 'contracts/inactive',
             label: 'Inativos',
           }
         ]
       },
       {
-        routeLink: 'registration/devices',
-        label: 'Equipamentos',
+        routeLink: 'base-register',
+        label: 'Cadastros Base',
         items: [
           {
-            routeLink: 'registration/base-registration',
-            label: 'Cadastro Base',
-            items: [
-              {
-                routeLink: 'registration/base-registration/manufacturer',
-                label: 'Fabricantes'
-              },
-              {
-                routeLink: 'registration/base-registration/model',
-                label: 'Modelos'
-              },
-              {
-                routeLink: 'registration/base-registration/device-group',
-                label: 'Grupos de Equipamento'
-              },
-              {
-                routeLink: 'registration/base-registration/device-type',
-                label: 'Tipos de Equipamento'
-              }
-            ]
+            routeLink: 'base-manufacturer',
+            label: 'Fabricantes'
           },
           {
-            routeLink: 'registration/devices/customer-devices',
-            label: 'Equipamentos de Cliente',
+            routeLink: 'base-registration/model',
+            label: 'Modelos'
           },
           {
-            routeLink: 'registration/devices/calibration',
-            label: 'Calibração',
-            items: [
-              {
-                routeLink: 'registration/devices/calibration/inputs',
-                label: 'Insumos'
-              },
-              {
-                routeLink: 'registration/devices/calibration/tools',
-                label: 'Ferramentas'
-              },
-              {
-                routeLink: 'registration/devices/calibration/certificate',
-                label: 'Certificado de Calibração'
-              },
-            ]
+            routeLink: 'base-registration/device-group',
+            label: 'Grupos de Equipamento'
+          },
+          {
+            routeLink: 'base-registration/device-type',
+            label: 'Tipos de Equipamento'
           }
         ]
       },

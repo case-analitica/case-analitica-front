@@ -1,5 +1,3 @@
-import { DeviceModel } from "./device-model.model";
-
 export interface CalibrationsDue {
   id: string;
   serialNumber: string;
@@ -7,4 +5,10 @@ export interface CalibrationsDue {
   deviceModel: DeviceModel;
   calibrationDate: string;
   nextCalibration: string;
+}
+
+export interface DeviceModel {
+  id: string;
+  model: string;
+  manufacturer: string;
 }

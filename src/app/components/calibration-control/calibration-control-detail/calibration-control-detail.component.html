@@ -1,0 +1,32 @@
+<form [formGroup]="calibrationForm">
+  <h1 mat-dialog-title>{{title}}</h1>
+  <div style="text-align: center;">
+    <div mat-dialog-content>
+      <div style="display: inline-block; width: 100%;">
+        <mat-form-field style="width: 25%; float: left; margin-right: 2.5%;">
+          <mat-label>Fabricante</mat-label>
+          <input matInput formControlName="manufacturer" [readonly]="noEdit">
+        </mat-form-field>
+        <mat-form-field style="width: 25%; float: left;">
+          <mat-label>Modelo</mat-label>
+          <input matInput formControlName="model" [readonly]="noEdit">
+        </mat-form-field>
+        <mat-form-field style="width: 100%; float: left;">
+          <mat-label>Pontos de Calibração</mat-label>
+          <input matInput formControlName="calibrationPoints" [readonly]="noEdit">
+        </mat-form-field>
+        <mat-form-field style="width: 100%; float: left;">
+          <mat-label>Critérios de Aceitação</mat-label>
+          <input matInput formControlName="acceptanceCriteria" [readonly]="noEdit">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-actions style="float: right;">
+    <button mat-raised-button (click)="onCancel()" mat-raised-button color="warn">{{messageOnClose}}</button>
+    <button *ngIf="noEdit == true" mat-raised-button type="submit" color="primary"
+      style="background-color: #02bb02; width: 11em;" (click)="onEditCalibrationControl()">Alterar Registro</button>
+    <button *ngIf="noEdit == false" mat-raised-button type="submit" color="primary"
+      style="background-color: #0057fa; width: 11em;" (click)="onSubmit()">Salvar</button>
+  </div>
+</form>

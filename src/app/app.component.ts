@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { SidenavComponent } from './layout/sidenav/sidenav.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { BodyComponent } from './layout/body/body.component';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -6,9 +9,11 @@ interface SideNavToggle {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [BodyComponent, NavbarComponent, SidenavComponent]
 })
 export class AppComponent {
 

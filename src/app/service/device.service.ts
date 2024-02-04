@@ -17,7 +17,7 @@ export class DeviceService {
   }
 
   public getAll(filterName: string, filterValue: string, pageIndex: number, sort: string, direction: string, pageSize: number) {
-    return this.httpClient.get<ApiResponse[]>(`${this.API}?filterName=${filterName}&filterValue=${filterValue}&pageIndex=${pageIndex}&sort=${sort}&direction=${direction}&pageSize=${pageSize}`)
+    return this.httpClient.get<ApiResponse[]>(`${this.API}?filterName=${filterName}&filterValue=${filterValue}&page=${pageIndex}&sort=${sort}&direction=${direction}&pageSize=${pageSize}`)
       .pipe(
         first(),
         tap(devices => console.log(devices))
@@ -29,8 +29,8 @@ export class DeviceService {
     return this.httpClient.get(`${this.API}/${id}`);
   }
 
-  public update(id: number, data: Device) {
-    return this.httpClient.patch(`${this.API}/${id}`, data);
+  public update(device: Device) {
+    return this.httpClient.patch(`${this.API}`, device);
   }
 
   public delete(id: number) {
