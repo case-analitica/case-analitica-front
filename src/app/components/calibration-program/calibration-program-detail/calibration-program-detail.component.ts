@@ -17,7 +17,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     templateUrl: './calibration-program-detail.component.html',
     styleUrls: ['./calibration-program-detail.component.scss'],
     standalone: true,
-    imports: [FormsModule, ReactiveFormsModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatButtonModule, NgIf]
+    imports: [
+      FormsModule,
+      ReactiveFormsModule,
+      MatDialogModule,
+      MatFormFieldModule,
+      MatInputModule,
+      MatButtonModule,
+      NgIf,
+    ]
 })
 export class CalibrationProgramDetailComponent {
 
