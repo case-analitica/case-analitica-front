@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  case-analitica-front:
+    image: case-analitica-front
+    build: .
+    ports:
+      - 8090:80
