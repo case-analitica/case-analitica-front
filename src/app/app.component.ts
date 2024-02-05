@@ -17,7 +17,7 @@ interface SideNavToggle {
 })
 export class AppComponent {
 
-  title = 'case-analitica-service-manager';
+  title = 'case-analitica-front';
 
   isSideNavCollapsed = false;
   screenWidth = 0;

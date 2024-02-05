@@ -13,16 +13,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'case-analitica-service-manager'`, () => {
+  it(`should have as title 'case-analitica-front'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('case-analitica-service-manager');
+    expect(app.title).toEqual('case-analitica-front');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('case-analitica-service-manager app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('case-analitica-front app is running!');
   });
 });
