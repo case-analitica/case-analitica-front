@@ -1,8 +1,13 @@
-version: '2.1'
+version: '3.8'
 
 services:
   case-analitica-front:
-    image: case-analitica-service-manager
+    image: case-analitica-app-front
+    container_name: case-analitica-front-service
     build: .
     ports:
-      - 8090:80
+      - 8081:80
+
+networks:
+  ca-networks:
+    driver: bridge

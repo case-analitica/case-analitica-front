@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "case-analitica-service-manager": {
+    "case-analitica-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/case-analitica-service-manager",
+            "outputPath": "dist/case-analitica-front",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "case-analitica-service-manager:build:production"
+              "browserTarget": "case-analitica-front:build:production"
             },
             "development": {
-              "browserTarget": "case-analitica-service-manager:build:development"
+              "browserTarget": "case-analitica-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "case-analitica-service-manager:build"
+            "browserTarget": "case-analitica-front:build"
           }
         },
         "test": {

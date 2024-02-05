@@ -1,6 +1,6 @@
 {
-  "name": "case-analitica-service-manager",
-  "version": "0.0.0",
+  "name": "case-analitica-front",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
