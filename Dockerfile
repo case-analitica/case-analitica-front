@@ -1,6 +1,7 @@
 FROM node as node
 WORKDIR /app
-COPY package*.json /app/
+COPY package.json package.json
+COPY package-lock.json package-lock.json
 RUN npm i npm@latest -g
 RUN npm install @angular/cli@16.2.12 --silent
 COPY . .
