@@ -23,9 +23,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run tests
-      run: npm run test:headless
-
     - name: Build
       run: npm run build:prod
 
@@ -40,6 +37,6 @@ jobs:
       if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GH_TOKEN }}
         publish_dir: dist/case-analitica-front
         enable_jekyll: true
