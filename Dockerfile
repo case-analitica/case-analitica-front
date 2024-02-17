@@ -1,8 +1,8 @@
 FROM node as node
 WORKDIR /app
-COPY package.json /app/
+COPY package*.json /app/
 RUN npm i npm@latest -g
-RUN npm install @angular/cli@16.2.11 --silent
+RUN npm install @angular/cli@16.2.12 --silent
 COPY . .
 RUN npm run build --prod
 
