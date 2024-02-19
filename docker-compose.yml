@@ -2,11 +2,10 @@ version: '3.8'
 
 services:
   case-analitica-front:
-    image: case-analitica-app-front:0.0.1
-    container_name: "case-analitica-front-service"
-    build: .
+    image: ghcr.io/case-analitica/case-analitica-front:latest
+    container_name: "case-analitica-front-app"
     ports:
-      - 4200:80
+      - 80:80
     expose:
       - 80
     networks:
