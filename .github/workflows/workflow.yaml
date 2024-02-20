@@ -66,4 +66,7 @@ jobs:
         port: ${{ secrets.SERVER_PORT }}
         command_timeout: 30m
         script: |
-          echo "Nice Job!!!"
+          cd ${{ secrets.WORK_DIR }}
+          sudo docker compose pull
+          sudo docker compose up -d
+          exit
