@@ -60,10 +60,13 @@ jobs:
     - name: connect and pull
       uses: appleboy/ssh-action@v1.0.3
       with:
-        host: 195.35.18.86
-        username: rfelipe
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SERVER_PRIVATE_KEY }}
-        port: 22
+        port: ${{ secrets.SERVER_PORT }}
         command_timeout: 30m
         script: |
-          echo "Nice Job!!!"
+          cd ${{ secrets.WORK_DIR }}
+          sudo docker compose pull
+          sudo docker compose up -d
+          exit
