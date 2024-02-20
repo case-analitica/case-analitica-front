@@ -68,6 +68,7 @@ jobs:
         command_timeout: 30m
         script: |
           cd ${{ secrets.WORK_DIR }}
-          docker compose pull
+          sudo docker compose pull
+          ${{ secrets.SERVER_USER_KEY }}
           docker compose up -d
           exit
