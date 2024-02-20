@@ -70,5 +70,5 @@ jobs:
           cd ${{ secrets.WORK_DIR }}
           docker compose down
           docker compose up -d
-          docker rmi "$(docker images -f 'dangling=true' -q)"
+          yes | docker image prune -a
           exit
