@@ -58,7 +58,7 @@ jobs:
       - docker-build
     steps:
     - name: connect and pull
-      uses: appleboy/ssh-action@v0.1.10
+      uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ inputs.SERVER_HOST }}
         username: ${{ secrets.SERVER_USER }}
