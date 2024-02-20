@@ -69,6 +69,6 @@ jobs:
         script: |
           cd ${{ secrets.WORK_DIR }}
           sudo docker compose pull
-          ${{ secrets.SERVER_USER_KEY }}
+          ${{ secrets.SERVER_USER_KEY }} -S
           docker compose up -d
           exit
