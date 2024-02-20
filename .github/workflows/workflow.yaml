@@ -68,6 +68,7 @@ jobs:
         command_timeout: 30m
         script: |
           cd ${{ secrets.WORK_DIR }}
+          docker compose down
           docker compose up -d
           docker rmi $(docker images -f "dangling=true" -q)
           exit
