@@ -4,7 +4,6 @@ import { first, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Address } from 'src/model/address/address.model';
 import { ApiResponse } from 'src/model/api-model/api-response.model';
-import { Customer } from 'src/model/customer/customer.model';
 
 @Injectable({
   providedIn: 'root'
